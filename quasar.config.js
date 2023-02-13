@@ -68,7 +68,7 @@ module.exports = configure(function (/* ctx */) {
 
       // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
 
-      publicPath: '/quasar-test',
+      publicPath: '/ahaha',
       // analyze: true,
       env: {
         VITE_API: process.env.VITE_API
