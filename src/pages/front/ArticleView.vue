@@ -1,25 +1,43 @@
+<style scoped>
+#New{
+  width: 1000px;
+  margin: auto;
+}
+.col-6{
+  margin: auto;
+}
+.none{
+  display: none;
+}
+</style>
+
 <template>
   <div id="New">
     <div class="row">
         <div class="col-12">
-          <h1 class="text-center">{{ New.name }}</h1>
+          <h4 class="text-center title">{{ New.name }}</h4>
         </div>
         <div class="col-12">
+          <h6 class="text-center">Post Date：{{ new Date(New.date).toLocaleDateString() }}</h6>
+        <!-- new Date(news.date).toLocaleDateString() -->
+          <h6 class="text-center">Category：[{{ New.category }}]</h6>
+        </div>
+        <div class="col-8">
             <img :src="New.image">
         </div>
-        <div class="col-12">
-            <div v-html="New.description"></div>
+        <hr>
+        <div class="word" v-html="New.description">
         </div>
         <div class="col-12">
             <q-form @submit="submitCart">
-                <q-input  v-model.number="quantity" type="number" label="數量" :rules="[rules.required, rules.number]"></q-input>
+                <q-input  class="none" v-model.number="quantity" type="number" label="數量" :rules="[rules.required, rules.number]"></q-input>
                 <!-- <q-btn type="submit" color="primary">加入購物車</q-btn> -->
             </q-form>
         </div>
     </div>
       <div class="align-center justify-center text-center" persistent="persistent" :model-value="!New.sell" >
           <!-- <h1 class="text-red">已下架</h1> -->
-          <q-btn @click="router.go(-1)">回上頁</q-btn>
+          <q-btn @click="router.go(-1)">Go Back</q-btn>
       </div>
   </div>
 </template>
@@ -55,7 +73,8 @@ const New = reactive({
   description: '',
   image: '',
   sell: true,
-  category: ''
+  category: '',
+  date: ''
 })
 
 const submitCart = () => {
@@ -72,6 +91,7 @@ const submitCart = () => {
     New.image = data.result.image
     New.sell = data.result.sell
     New.category = data.result.category
+    New.date = data.result.date
 
     document.title = '購物網 | ' + New.name
     // document.querySelector('meta[property="og:title"]').setAttribute('content', New.name)

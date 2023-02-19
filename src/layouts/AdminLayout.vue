@@ -1,21 +1,26 @@
+<style scoped>
+.logo-text{
+  margin-top: 1rem;
+  font-family: 'Teko';
+  color: white;
+  font-size: 3rem;
+}
+</style>
+
 <template>
   <q-layout view="hHh lpR fFf">
 
     <q-header class="bg-primary text-secondary h1" height-hint="98">
       <q-toolbar>
-        <q-toolbar-title >
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-          </q-avatar>
-          Dostoevsky
-        </q-toolbar-title>
+            <img src="src/img/home/LOGO-01.png" style="width: 100px;">
+          <span class="logo-text">Dostoevsky Library</span>
       </q-toolbar>
 
       <q-tabs align="right">
         <q-route-tab to="/home" label="Home" />
-        <q-route-tab to="/admin/news" label="news-Admin" />
-        <q-route-tab to="/admin" label="Products-Admin" />
-        <q-route-tab to="/admin/orders" label="Order-Admins" />
+        <q-route-tab to="/admin/news" label="Article-Manage" />
+        <q-route-tab to="/admin" label="Products-Manage" />
+        <q-route-tab to="/admin/orders" label="Order-Manage" />
       </q-tabs>
     </q-header>
 

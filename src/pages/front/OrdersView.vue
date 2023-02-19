@@ -23,11 +23,35 @@
 <div id="orders">
     <div class="row">
         <div class="col-12">
-            <h3 class="title">訂單</h3>
+            <h3 class="title">Orders</h3>
         </div>
         <!-- Quasar範例 -->
         <div class="col-10">
         <q-table :rows="orders" :columns="columns">
+          <!-- <template v-slot:body-cell-image="props">
+            <q-td>
+              <img :src="props.row.p_id.image" style="height: 100px; width: 100px" />
+            </q-td>
+          </template> -->
+          <!-- <template v-slot:body-cell-image="props">
+            <q-td>
+              <ul>
+                <li v-for="product in props.row.products" :key="product._id">
+                    <img :src="product.p_id.image" style="height: 100px; width: 100px" />
+                </li>
+              </ul>
+        </q-td>
+    </template> -->
+          <template v-slot:body-cell-name="props">
+            <q-td>
+              <ul>
+                <li v-for="product in props.row.products" :key="product._id">
+                    <p>{{product.quantity + ' 個 ' + product.p_id.name}}
+                    </p>
+                </li>
+              </ul>
+        </q-td>
+    </template>
         </q-table>
       </div>
         <!-- 老師範例 -->
@@ -66,28 +90,28 @@ import Swal from 'sweetalert2'
 
 // 範例
 const columns = [
-  {
-    name: 'id',
-    label: 'ID',
-    field: orders => orders._id,
-    align: 'center'
-  },
+  // {
+  //   name: 'id',
+  //   label: '图片',
+  //   field: orders => orders,
+  //   align: 'center'
+  // },
   {
     name: 'date',
-    label: '日期',
+    label: 'Date',
     field: orders => new Date(orders.date).toLocaleDateString(),
     align: 'center'
   },
   {
     name: 'price',
-    label: '金額',
+    label: 'Total Price',
     field: orders => orders.totalPrice,
     align: 'center'
   },
   {
-    name: 'product',
-    label: '商品',
-    field: orders => orders.products[0],
+    name: 'name',
+    label: 'Product Title',
+    field: orders => orders,
     align: 'center'
   }
 ]

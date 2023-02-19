@@ -14,27 +14,27 @@ const routes = [
         name: 'home',
         component: () => import('pages/front/HomeView.vue'),
         meta: {
-          title: ' Dostoevsky | 首頁',
+          title: ' Dostoevsky | Home',
           login: false,
           admin: false
         }
       },
-      {
-        path: 'intro',
-        name: 'intro',
-        component: () => import('pages/front/IntroView.vue'),
-        meta: {
-          title: ' Dostoevsky | 介紹頁',
-          login: false,
-          admin: false
-        }
-      },
+      // {
+      //   path: 'intro',
+      //   name: 'intro',
+      //   component: () => import('pages/front/IntroView.vue'),
+      //   meta: {
+      //     title: ' Dostoevsky | 介紹頁',
+      //     login: false,
+      //     admin: false
+      //   }
+      // },
       {
         path: 'reading',
         name: 'reading',
         component: () => import('pages/front/ReadingView.vue'),
         meta: {
-          title: ' Dostoevsky | 閱讀',
+          title: ' Dostoevsky | Reading',
           login: false,
           admin: false
         }
@@ -44,7 +44,7 @@ const routes = [
         name: 'news',
         component: () => import('pages/front/NewsView.vue'),
         meta: {
-          title: ' Dostoevsky | 新訊息',
+          title: ' Dostoevsky | Articles',
           login: false,
           admin: false
         }
@@ -54,7 +54,7 @@ const routes = [
         name: 'article',
         component: () => import('pages/front/ArticleView.vue'),
         meta: {
-          title: 'Dostoevsky | 文章詳情',
+          title: 'Dostoevsky | Article',
           login: false,
           admin: false
         }
@@ -64,7 +64,7 @@ const routes = [
         name: 'items',
         component: () => import('pages/front/ItemsView.vue'),
         meta: {
-          title: ' Dostoevsky | 商品',
+          title: ' Dostoevsky | Product',
           login: false,
           admin: false
         }
@@ -74,7 +74,7 @@ const routes = [
         name: 'product',
         component: () => import('pages/front/ProductView.vue'),
         meta: {
-          title: 'Dostoevsky | 商品詳情',
+          title: 'Dostoevsky | Items',
           login: false,
           admin: false
         }
@@ -84,7 +84,7 @@ const routes = [
         name: 'cart',
         component: () => import('pages/front/CartView.vue'),
         meta: {
-          title: ' Dostoevsky | 購物車',
+          title: ' Dostoevsky | Cart',
           login: true,
           admin: false
         }
@@ -94,7 +94,7 @@ const routes = [
         name: 'orders',
         component: () => import('pages/front/OrdersView.vue'),
         meta: {
-          title: ' Dostoevsky | 訂單',
+          title: ' Dostoevsky | Orders',
           login: true,
           admin: false
         }
@@ -104,7 +104,7 @@ const routes = [
         name: 'register',
         component: () => import('pages/front/RegisterView.vue'),
         meta: {
-          title: ' Dostoevsky | 註冊',
+          title: ' Dostoevsky | Register',
           login: false,
           admin: false
         }
@@ -114,7 +114,17 @@ const routes = [
         name: 'login',
         component: () => import('pages/front/LoginView.vue'),
         meta: {
-          title: ' Dostoevsky | 註冊',
+          title: ' Dostoevsky | Login',
+          login: false,
+          admin: false
+        }
+      },
+      {
+        path: 'karamazov',
+        name: 'karamazov',
+        component: () => import('pages/front/KaramazovView.vue'),
+        meta: {
+          title: ' Dostoevsky | Brothers Karamazov',
           login: false,
           admin: false
         }

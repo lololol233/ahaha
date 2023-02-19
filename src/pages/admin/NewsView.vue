@@ -2,39 +2,46 @@
 *{
   white-space: pre;
 }
+.col-10{
+  margin: auto;
+  margin-bottom: 20px;
+}
 </style>
 
 <template>
   <div id="admin-news">
-    <h2 class="title">文章管理</h2>
+    <h2 class="title">Article Management</h2>
     <div class="row">
-        <div class="col-12">
-            <q-btn color="primary" @click="openDialog(-1)">新增文章</q-btn>
+    <div class="col-12">
+            <q-btn color="primary" @click="openDialog(-1)">Add Article</q-btn>
         </div>
-        <div class="col-12">
-            <table>
-                <thead>
-                    <tr>
-                        <th>圖片</th>
-                        <th>標題</th>
-                        <th>管理</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="(New, idx) in news" :key="New._id">
-                        <td>
-                            <img :src="New.image" :aspect-ratio="1" :width="200">
-                        </td>
-                        <td>{{ New.name }}</td>
-                        <td>
-                            <q-btn color="primary" variant="text" @click="openDialog(idx)"><q-icon name="build" color="white"></q-icon></q-btn>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+          <!-- 雅嵐範例 -->
+          <div class="col-10">
+        <q-table :rows="news" :columns="columns" row-key="_id">
+    <template v-slot:body-cell-image="props">
+        <q-td>
+          <img :src="props.row.image" style="height: 100px; width: 100px" />
+        </q-td>
+    </template>
+    <!-- <template v-slot:body-cell-date="props">
+        <q-td>
+        </q-td>
+    </template> -->
+    <template v-slot:body-cell-edit="props">
+        <q-td>
+            <!-- <q-btn round="round" @click="openAdd(filterData.findIndex(item =&gt; item._id === props.row._id ))" icon="fa-solid fa-pen-to-square">
+              <q-icon name="build"></q-icon>
+            </q-btn> -->
+            <q-btn round="round" @click="openDialog
+            (news.findIndex(item=&gt;item._id === props.row._id))">
+              <q-icon name="build"></q-icon>
+            </q-btn>
+        </q-td>
+    </template>
+        </q-table>
+      </div>
   </div>
+</div>
   <q-dialog v-model="form.dialog" persistent>
     <q-card>
             <q-form @submit="submit">
@@ -44,7 +51,7 @@
               <q-card-text>
                   <div class="row">
                       <div class="col-12">
-                          <q-input v-model="form.name" type="text" label="標題" :rules="[rules.required]"/>
+                          <q-input v-model="form.name" type="text" label="Title" :rules="[rules.required]"/>
                       </div>
                       <!-- <div class="col-12">
                           <q-input v-model="form.description" rows="3" auto-grow="auto-grow" label="說明" :rules="[rules.required]"/>
@@ -53,24 +60,92 @@
                         <div class="q-pa-md q-gutter-sm">
                         <q-editor
                           v-model="form.description"
-                          :definitions="{
-                            save: {
-                              tip: 'Save your work',
-                              icon: 'save',
-                              label: 'Save',
-                              handler: saveWork
-                            },
-                            upload: {
-                              tip: 'Upload to cloud',
-                              icon: 'cloud_upload',
-                              label: 'Upload',
-                              handler: uploadIt
-                            }
-                          }"
-                          :toolbar="[
-                            ['bold', 'italic', 'strike', 'underline'],
-                            ['upload', 'save']
-                          ]"
+                          :dense="$q.screen.lt.md"
+      :toolbar="[
+        [
+          {
+            label: $q.lang.editor.align,
+            icon: $q.iconSet.editor.align,
+            fixedLabel: true,
+            list: 'only-icons',
+            options: ['left', 'center', 'right', 'justify']
+          },
+          {
+            label: $q.lang.editor.align,
+            icon: $q.iconSet.editor.align,
+            fixedLabel: true,
+            options: ['left', 'center', 'right', 'justify']
+          }
+        ],
+        ['bold', 'italic', 'strike', 'underline', 'subscript', 'superscript'],
+        ['token', 'hr', 'link', 'custom_btn'],
+        ['print', 'fullscreen'],
+        [
+          {
+            label: $q.lang.editor.formatting,
+            icon: $q.iconSet.editor.formatting,
+            list: 'no-icons',
+            options: [
+              'p',
+              'h1',
+              'h2',
+              'h3',
+              'h4',
+              'h5',
+              'h6',
+              'code'
+            ]
+          },
+          {
+            label: $q.lang.editor.fontSize,
+            icon: $q.iconSet.editor.fontSize,
+            fixedLabel: true,
+            fixedIcon: true,
+            list: 'no-icons',
+            options: [
+              'size-1',
+              'size-2',
+              'size-3',
+              'size-4',
+              'size-5',
+              'size-6',
+              'size-7'
+            ]
+          },
+          {
+            label: $q.lang.editor.defaultFont,
+            icon: $q.iconSet.editor.font,
+            fixedIcon: true,
+            list: 'no-icons',
+            options: [
+              'default_font',
+              'arial',
+              'arial_black',
+              'comic_sans',
+              'courier_new',
+              'impact',
+              'lucida_grande',
+              'times_new_roman',
+              'verdana'
+            ]
+          },
+          'removeFormat'
+        ],
+        ['quote', 'unordered', 'ordered', 'outdent', 'indent'],
+
+        ['undo', 'redo'],
+        ['viewsource']
+      ]"
+      :fonts="{
+        arial: 'Arial',
+        arial_black: 'Arial Black',
+        comic_sans: 'Comic Sans MS',
+        courier_new: 'Courier New',
+        impact: 'Impact',
+        lucida_grande: 'Lucida Grande',
+        times_new_roman: 'Times New Roman',
+        verdana: 'Verdana'
+      }"
                         />
                       </div>
                       </div>
@@ -85,7 +160,7 @@
                         </q-file>
                       </div>
                       <div class="col-12">
-                          <q-checkbox v-model="form.post" label="發布"></q-checkbox>
+                          <q-checkbox v-model="form.post" label="Post"></q-checkbox>
                       </div>
                       <div class="col-12">
                           <!-- <v-image-input class="mx-auto" v-model="form.image" removable="removable" :max-file-size="1"></v-image-input> -->
@@ -94,8 +169,8 @@
                   </div>
               </q-card-text>
               <q-card-actions>
-                  <q-btn :disabled="form.loading" color="primary" v-close-popup>取消</q-btn>
-                  <q-btn :disabled="form.loading" color="primary" type="submit">送出</q-btn>
+                  <q-btn :disabled="form.loading" color="primary" v-close-popup>Cancel</q-btn>
+                  <q-btn :disabled="form.loading" color="primary" type="submit">Submit</q-btn>
               </q-card-actions>
             </q-form>
           </q-card>
@@ -108,28 +183,54 @@ import { reactive } from 'vue'
 import Swal from 'sweetalert2'
 import { useQuasar } from 'quasar'
 
+const columns = [
+  {
+    name: 'name',
+    label: 'Article Title',
+    field: news => news.name,
+    align: 'center'
+  },
+  {
+    name: 'image',
+    label: 'Image',
+    field: news => news,
+    align: 'center'
+  },
+  {
+    name: 'date',
+    label: 'Post Date',
+    field: news => new Date(news.date).toLocaleDateString(),
+    align: 'center'
+  },
+  {
+    name: 'edit',
+    label: 'Edit',
+    field: news => news,
+    align: 'center'
+  }
+]
 const $q = useQuasar()
 // const editor = ref(
 //   'After you define a new button,' +
 //         ' you have to make sure to put it in the toolbar too!'
 // )
 
-const saveWork = () => {
-  $q.notify({
-    message: 'Saved your text to local storage',
-    color: 'green-4',
-    textColor: 'white',
-    icon: 'cloud_done'
-  })
-}
-const uploadIt = () => {
-  $q.notify({
-    message: 'Server unavailable. Check connectivity.',
-    color: 'red-5',
-    textColor: 'white',
-    icon: 'warning'
-  })
-}
+// const saveWork = () => {
+//   $q.notify({
+//     message: 'Saved your text to local storage',
+//     color: 'green-4',
+//     textColor: 'white',
+//     icon: 'cloud_done'
+//   })
+// }
+// const uploadIt = () => {
+//   $q.notify({
+//     message: 'Server unavailable. Check connectivity.',
+//     color: 'red-5',
+//     textColor: 'white',
+//     icon: 'warning'
+//   })
+// }
 
 const categories = ['最新消息', '精采文章', '其他']
 const rules = {

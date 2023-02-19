@@ -1,16 +1,42 @@
+<style scoped>
+.col-10{
+  margin: auto;
+}
+</style>
+
 <template>
 <div id="cart">
   <div class="row">
     <div class="col-12">
-      <h3 class="title">購物車</h3>
+      <h3 class="title">Cart</h3>
     </div>
-    <!-- Quasar範例 -->
-    <div class="col-10">
-      <q-table :rows="cart" :columns="columns">
-      </q-table>
-    </div>
+              <!-- 雅嵐範例 -->
+      <div class="col-10">
+        <q-table :rows="cart" :columns="columns" row-key="_id" >
+          <template v-slot:body-cell-image="props">
+            <q-td>
+              <img :src="props.row.p_id.image" style="height: 100px; width: 100px" />
+            </q-td>
+          </template>
+          <template v-slot:body-cell-minus="props">
+              <q-td>
+                <q-btn color="primary" @click="updateCart(cart.findIndex(item=&gt;item._id === props.row._id), -1)">-</q-btn>
+              </q-td>
+          </template>
+          <template v-slot:body-cell-add="props">
+              <q-td>
+                <q-btn color="primary" @click="updateCart(cart.findIndex(item=&gt;item._id === props.row._id), 1)">+</q-btn>
+              </q-td>
+          </template>
+          <template v-slot:body-cell-delete="props">
+              <q-td>
+                <q-btn color="red" @click="updateCart(cart.findIndex(item=&gt;item._id === props.row._id), parseInt(props.row.quantity*-1))">刪除</q-btn>
+              </q-td>
+          </template>
+        </q-table>
+      </div>
     <!-- 老師範例 -->
-    <div class="col-12">
+    <!-- <div class="col-12">
       <table>
         <thead>
           <tr>
@@ -43,7 +69,7 @@
           </tr>
         </tbody>
       </table>
-    </div>
+    </div> -->
     <div class="col-12 text-center">
 
       <!-- <q-btn color="green" :disabled="!canCheckout" @click="onCheckoutBtnClick">
@@ -51,8 +77,8 @@
         <td class="text-center" colspan="6">沒有商品</td>
       </q-btn> -->
       <div class="col-12 text-center">
-        <p>總金額 {{ totalPrice }}</p>
-        <q-btn color="accent" :disabled="!canCheckout" @click="onCheckoutBtnClick">結帳</q-btn>
+        <p>Total Price {{ totalPrice }}</p>
+        <q-btn color="accent" :disabled="!canCheckout" @click="onCheckoutBtnClick">Checkout</q-btn>
       </div>
     </div>
   </div>
@@ -66,6 +92,56 @@ import { apiAuth } from '@/boot/axios'
 import { useUserStore } from '@/stores/user'
 import { useRouter } from 'vue-router'
 
+const columns = [
+  {
+    name: 'image',
+    label: 'Image',
+    field: cart => cart,
+    align: 'center'
+  },
+  {
+    name: 'name',
+    label: 'Product Title',
+    field: cart => cart.p_id.name,
+    align: 'center'
+  },
+  {
+    name: 'price',
+    label: 'Price',
+    field: cart => cart.p_id.price,
+    align: 'center'
+  },
+  {
+    name: 'minus',
+    label: '',
+    field: cart => cart,
+    align: 'center'
+  },
+  {
+    name: 'edit',
+    label: 'Quantity',
+    field: cart => cart.quantity,
+    align: 'center'
+  },
+  {
+    name: 'add',
+    label: '',
+    field: cart => cart,
+    align: 'center'
+  },
+  {
+    name: 'price-total',
+    label: 'Total Price',
+    field: cart => cart.quantity * cart.p_id.price,
+    align: 'center'
+  },
+  {
+    name: 'delete',
+    label: 'Delete',
+    field: cart => cart,
+    align: 'center'
+  }
+]
 const router = useRouter()
 
 const user = useUserStore()

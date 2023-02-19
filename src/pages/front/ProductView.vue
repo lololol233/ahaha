@@ -1,25 +1,38 @@
+<style scopped>
+#product{
+  width: 70%;
+  margin: auto;
+}
+.col-6{
+  margin: auto;
+}
+</style>
+
 <template>
   <div id="product">
     <div class="row ">
-
         <div class="col-12">
+          <h3 class="text-center">{{ product.name }}</h3>
+          <div class="row">
+          <div class="col-lg-6 col-sm-12">
             <img :src="product.image">
-            <h3 class="text-center">{{ product.name }}</h3>
-        </div>
-        <div class="col-12">
-          <p>${{ product.price }}</p>
-          <p class="pre">{{ product.description }}</p>
-        </div>
+          </div>
+
+        <div class="col-lg-6 col-sm-12">
+          <h4>${{ product.price }}</h4>
+          <div v-html="product.description"></div>
+        </div></div>
         <div class="col-12">
             <q-form @submit="submitCart">
                 <q-input  v-model.number="quantity" type="number" label="數量" :rules="[rules.required, rules.number]"></q-input>
-                <q-btn type="submit" color="primary">加入購物車</q-btn>
+                <q-btn type="submit" color="primary">Add Cart</q-btn>
             </q-form>
         </div>
+      </div>
     </div>
       <div class="align-center justify-center text-center" persistent="persistent" :model-value="!product.sell" >
           <!-- <h1 class="text-red">已下架</h1> -->
-          <q-btn @click="router.go(-1)">回上頁</q-btn>
+          <q-btn @click="router.go(-1)">Go Back</q-btn>
       </div>
   </div>
 </template>

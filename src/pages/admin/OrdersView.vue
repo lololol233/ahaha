@@ -8,11 +8,21 @@
 <div id="orders"></div>
 <div class="row">
   <div class="col-12">
-    <h3 class="title">訂單管理</h3>
+    <h3 class="title">Orders Management</h3>
   </div>
 <!-- Quasar範例 -->
     <div class="col-10">
         <q-table :rows="orders" :columns="columns">
+          <template v-slot:body-cell-name="props">
+            <q-td>
+              <ul>
+                <li v-for="product in props.row.products" :key="product._id">
+                    <p>{{product.quantity + ' 個 ' + product.p_id.name}}
+                    </p>
+                </li>
+              </ul>
+        </q-td>
+    </template>
         </q-table>
     </div>
   <!-- 老師範例 -->
@@ -75,9 +85,9 @@ const columns = [
     align: 'center'
   },
   {
-    name: 'product',
+    name: 'name',
     label: '商品',
-    field: orders => orders.products[0],
+    field: orders => orders,
     align: 'center'
   }
 ]

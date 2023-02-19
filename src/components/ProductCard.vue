@@ -5,7 +5,7 @@
   <div class="q-pb-xl">
   <q-card class="card-product" flat style="width: 18rem; height: 31rem">
     <router-link class="text-primary" :to="'/products/' + _id">
-      <img :src="image" style="width: 18rem; height: 21rem"></router-link>
+      <img :src="image" style="width: 18rem; height: 20rem"></router-link>
       <div class="q-pa-md">
     <div class="text-h4">
 {{ name }}</div>
@@ -14,7 +14,7 @@
         <p class="pre">{{ description }}</p>
     </div> -->
     <q-card-actions>
-        <q-btn color="accent" @click="editCart({_id, quantity: 1})"><q-icon name="shopping_cart"></q-icon>加入購物車</q-btn>
+        <q-btn color="accent" @click="editCart({_id, quantity: 1})"><q-icon name="shopping_cart"></q-icon>Add Cart</q-btn>
     </q-card-actions></div>
 </q-card>
 </div>

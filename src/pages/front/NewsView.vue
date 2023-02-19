@@ -1,9 +1,15 @@
+<style scoped>
+.card{
+  margin: auto;
+}
+</style>
+
 <template>
   <div class="row">
           <div class="col-12">
-              <h3 class="title">News</h3>
+              <h3 class="title">Articles</h3>
           </div>
-          <div class="col-12" v-for="New in news" :key="New._id">
+          <div class="card" v-for="New in news" :key="New._id">
               <NewsCard v-bind="New"></NewsCard>
           </div>
   </div>
