@@ -1,1 +1,0 @@
-import{_ as e,Q as r}from"./Dosto2.040fccc2.js";import{a0 as t,n as a,a1 as o,d as s,F as c,z as n}from"./index.a7c5c2a5.js";import"./QSpinner.51b06e69.js";import"./use-size.6b9b6685.js";import"./render.e5faaf9e.js";const _={},i=n("h1",{class:"title"},"Intro",-1);function m(p,l){return a(),o(c,null,[i,s(r,{src:e,ratio:9/9})],64)}var B=t(_,[["render",m]]);export{B as default};
