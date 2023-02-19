@@ -272,7 +272,7 @@ footer{
         </p>
       </div>
       <div class="col-lg-6 col-md-12 right order-first">
-        <q-img src="@/img/home/Dosto4.png" alt="" style="width: 600px;"></q-img>
+        <q-img src="src\img\home\dosto4.jpg" alt="" style="width: 600px;"></q-img>
       </div>
     </div>
     <!-- Timeline example -->
@@ -369,7 +369,7 @@ footer{
           </div>
         </q-carousel-slide>
         <q-carousel-slide name="map" class="column no-wrap flex-center">
-          <img class="slide-img" src="/src/img/home/comment3.png" alt="">
+          <img class="slide-img" src="\src\img\home\comment3.png" alt="">
           <div class="q-mt-md text-center">
             <p class="comment">“Whoever you are, you are the vessel of this perplexed liquid, this cloudy, yeasty, precious stuff, the soul. The soul is not restrained by barriers. It overflows, it floods, it mingles with the souls of others.”</p>
             <div class="text-h6">William Somerset Maugham</div>
