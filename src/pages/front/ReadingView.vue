@@ -58,21 +58,21 @@ body {
   >
     <swiper-slide
       ><router-link class="text-primary" to="/karamazov"><img
-        src="\src\img\book\book1 300x450.png" /></router-link></swiper-slide
+        src="src\img\book\book1 300x450.png" /></router-link></swiper-slide
     ><swiper-slide
       ><img
-        src="\src\img\book\book5.png" /></swiper-slide
+        src="src\img\book\book5.png" /></swiper-slide
     ><swiper-slide
       ><img
-        src="\src\img\book\book6.png" /></swiper-slide
+        src="src\img\book\book6.png" /></swiper-slide
     ><swiper-slide
       ><img
-        src="\src\img\book\book7.png" /></swiper-slide
+        src="src\img\book\book7.png" /></swiper-slide
     ><swiper-slide
       ><img
-        src="\src\img\book\book8.png" /></swiper-slide
+        src="src\img\book\book8.png" /></swiper-slide
     ><swiper-slide
-      ><img src="\src\img\book\book9.png"
+      ><img src="src\img\book\book9.png"
     /></swiper-slide>
   </swiper>
 </template>
