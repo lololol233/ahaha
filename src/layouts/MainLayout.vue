@@ -35,7 +35,7 @@ font-family: 'Dancing Script', cursive;
         </q-toolbar-title>
       </q-toolbar> -->
       <q-toolbar>
-            <img src="src/img/home/LOGO-01.png" style="width: 80px;">
+            <img src="src/assets/img/home/LOGO-01.png" style="width: 80px;">
           <span class="logo-text">Dostoevsky Library</span>
       </q-toolbar>
 
