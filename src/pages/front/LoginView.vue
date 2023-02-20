@@ -47,7 +47,7 @@ p{
 <template>
   <div class="all">
 <div class="left">
-  <q-img src="src/assets/img/home/Dosto2.jpg"
+  <q-img src="../../assets/img/home/Dosto2.jpg"
           :ratio="1/1">
           <div class="absolute-bottom text-subtitle1 text-center">
             Photo of Dostoevsky

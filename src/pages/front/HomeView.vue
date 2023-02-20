@@ -369,7 +369,7 @@ footer{
           </div>
         </q-carousel-slide>
         <q-carousel-slide name="map" class="column no-wrap flex-center">
-          <img class="slide-img" src="src/assets/img/home/comment3.png" alt="">
+          <img class="slide-img" src="../../assets/img/home/comment3.png" alt="">
           <div class="q-mt-md text-center">
             <p class="comment">“Whoever you are, you are the vessel of this perplexed liquid, this cloudy, yeasty, precious stuff, the soul. The soul is not restrained by barriers. It overflows, it floods, it mingles with the souls of others.”</p>
             <div class="text-h6">William Somerset Maugham</div>
@@ -383,56 +383,56 @@ footer{
       <div class="col-12"><h3 class="text-h3">Works</h3></div>
         <div class="q-pa-lg row items-start q-gutter-md section04-card">
     <q-card class="my-card">
-      <img src="src/assets/img/book/book2.png">
+      <img src="../../assets/img/book/book2.png">
       <div class="label">
         <p>1866</p>
         <p>Crime and Punishent</p>
       </div>
     </q-card>
     <q-card class="my-card">
-      <img src="src/assets/img/book/book4.png">
+      <img src="../../assets/img/book/book4.png">
       <div class="label">
         <p>1856</p>
         <p>White Nights</p>
       </div>
     </q-card>
     <q-card class="my-card">
-      <img src="src/assets/img/book/book6.png">
+      <img src="../../assets/img/book/book6.png">
       <div class="label">
         <p>1856</p>
         <p>White Nights</p>
       </div>
     </q-card>
     <q-card class="my-card">
-      <img src="src/assets/img/book/book8.png">
+      <img src="../../assets/img/book/book8.png">
       <div class="label">
         <p>1869</p>
         <p>The Idiot</p>
       </div>
     </q-card>
     <q-card class="my-card">
-      <img src="src/assets/img/book/book9.png">
+      <img src="../../assets/img/book/book9.png">
       <div class="label">
         <p>1872</p>
         <p>Devils</p>
       </div>
     </q-card>
     <q-card class="my-card">
-      <img src="src/assets/img/book/book3.png">
+      <img src="../../assets/img/book/book3.png">
       <div class="label">
         <p>1879</p>
         <p>Raw Youth</p>
       </div>
     </q-card>
     <q-card class="my-card">
-      <img src="src/assets/img/book/book5.png">
+      <img src="../../assets/img/book/book5.png">
       <div class="label">
         <p>1879</p>
         <p>Raw Youth</p>
       </div>
     </q-card>
     <q-card class="my-card">
-      <img src="src/assets/img/book/book7.png">
+      <img src="../../assets/img/book/book7.png">
       <div class="label">
         <p>1880</p>
         <p>Brothers Karamazov</p>
@@ -487,7 +487,7 @@ window.onscroll = function() {scrollFunction()};
 }
 
 $('#section').css({
-    backgroundImage: 'url(src/assets/img/home/dosto5.png)',
+    backgroundImage: 'url(../../assets/img/home/dosto5.png)',
   })
 
 gsap.to('#section',{
