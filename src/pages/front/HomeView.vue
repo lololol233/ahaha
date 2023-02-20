@@ -178,6 +178,7 @@ footer{
       background-position: 50% 50%;
       display: flex;
       justify-content: end;
+      background-image: url(../../assets/img/home/dosto5.png);
     }
 .my-card img:hover{
   cursor: pointer;
@@ -487,7 +488,7 @@ window.onscroll = function() {scrollFunction()};
 }
 
 $('#section').css({
-    backgroundImage: `url(../../assets/img/home/dosto5.png)`,
+    backgroundImage: new URL('../../assets/img/home/dosto5.png', import.meta.url).href,
   })
 
 gsap.to('#section',{
