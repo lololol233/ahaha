@@ -25,33 +25,6 @@
     </template>
         </q-table>
     </div>
-  <!-- 老師範例 -->
-  <!-- <div class="col-12">
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>日期</th>
-          <th>使用者</th>
-          <th>金額</th>
-          <th>商品</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="order in orders" :key="order._id">
-          <td>{{ order._id }}</td>
-          <td>{{ new Date(order.date).toLocaleDateString() }}</td>
-          <td>{{ order.u_id.account }}</td>
-          <td>{{ order.totalPrice }}</td>
-          <td>
-            <ul>
-              <li v-for="product in order.products" :key="product._id">{{ product.quantity + ' 個 ' + product.p_id.name }}</li>
-            </ul>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div> -->
 </div>
 </template>
 

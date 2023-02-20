@@ -9,6 +9,11 @@
   width: 50vw;
   background-color: var(--secondary);
 }
+
+.left{
+  height: 100vh;
+  overflow: hidden;
+}
 .form{
   margin: auto;
   padding: 3rem;
@@ -48,7 +53,7 @@ p{
   <div class="all">
 <div class="left">
   <q-img src="../../assets/img/home/Dosto2.jpg"
-          :ratio="1/1">
+          :ratio="0.8/0.8">
           <div class="absolute-bottom text-subtitle1 text-center">
             Photo of Dostoevsky
           </div></q-img>

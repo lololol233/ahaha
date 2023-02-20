@@ -3,10 +3,17 @@
   margin: auto;
   margin-bottom: 20px;
 }
+.q-input,
+.q-select{
+  padding: 10px;
+}
+.slot{
+  text-align: center;
+}
 </style>
 <template>
   <div id="admin-products">
-    <h2 class="title">Product Management</h2>
+    <h3 class="title">Product Management</h3>
     <div class="row">
         <div class="col-10 mb-lg">
             <q-btn color="primary" @click="openDialog(-1)">Add Product</q-btn>
@@ -20,7 +27,7 @@
         <div class="col-10">
         <q-table :rows="products" :columns="columns" row-key="_id">
           <template v-slot:body-cell-image="props">
-        <q-td>
+        <q-td class="slot">
           <img :src="props.row.image" style="height: 100px; width: 100px" />
         </q-td>
     </template>
@@ -30,7 +37,7 @@
         </q-td>
     </template> -->
     <template v-slot:body-cell-edit="props">
-        <q-td>
+        <q-td class="slot">
             <!-- <q-btn round="round" @click="openAdd(filterData.findIndex(item =&gt; item._id === props.row._id ))" icon="fa-solid fa-pen-to-square">
               <q-icon name="build"></q-icon>
             </q-btn> -->
@@ -67,11 +74,12 @@
         </div> -->
     </div>
   </div>
-  <q-dialog v-model="form.dialog" persistent>
+  <q-dialog v-model="form.dialog" persistent :maximized="maximizedToggle" transition-show="slide-up"
+      transition-hide="slide-down">
     <q-card>
             <q-form @submit="submit">
               <q-card-title>
-                  <h3 class="text-center">{{ form._id.length > 0 ? 'Edit Product' : 'Add Product' }}</h3>
+                  <h3 class="text-center title">{{ form._id.length > 0 ? 'Edit Product' : 'Add Product' }}</h3>
               </q-card-title>
               <q-card-text>
                   <div class="row">
@@ -126,7 +134,7 @@
                   </div>
               </q-card-text>
               <q-card-actions>
-                  <q-btn :disabled="form.loading" cocolor="primary" v-close-popup>Cancel</q-btn>
+                  <q-btn :disabled="form.loading" v-close-popup>Cancel</q-btn>
                   <q-btn :disabled="form.loading" color="primary" type="submit">Submit</q-btn>
               </q-card-actions>
             </q-form>
@@ -136,8 +144,9 @@
 
 <script setup>
 import { apiAuth } from '@/boot/axios'
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 import Swal from 'sweetalert2'
+const maximizedToggle = ref(true)
 const columns = [
   {
     name: 'name',
@@ -149,6 +158,12 @@ const columns = [
     name: 'image',
     label: 'Image',
     field: products => products,
+    align: 'center'
+  },
+  {
+    name: 'category',
+    label: 'Category',
+    field: products => products.category,
     align: 'center'
   },
   {
@@ -164,7 +179,7 @@ const columns = [
     align: 'center'
   }
 ]
-const categories = ['書', '明信片', '其他']
+const categories = ['Books', 'Postcards', 'Others']
 const rules = {
   required (value) {
     return !!value || '欄位必填'

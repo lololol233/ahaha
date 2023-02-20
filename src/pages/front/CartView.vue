@@ -2,6 +2,9 @@
 .col-10{
   margin: auto;
 }
+.slot{
+  text-align: center;
+}
 </style>
 
 <template>
@@ -14,64 +17,28 @@
       <div class="col-10">
         <q-table :rows="cart" :columns="columns" row-key="_id" >
           <template v-slot:body-cell-image="props">
-            <q-td>
+            <q-td class="slot">
               <img :src="props.row.p_id.image" style="height: 100px; width: 100px" />
             </q-td>
           </template>
           <template v-slot:body-cell-minus="props">
-              <q-td>
-                <q-btn color="primary" @click="updateCart(cart.findIndex(item=&gt;item._id === props.row._id), -1)">-</q-btn>
+              <q-td class="slot">
+                <q-btn @click="updateCart(cart.findIndex(item=&gt;item._id === props.row._id), -1)">-</q-btn>
               </q-td>
           </template>
           <template v-slot:body-cell-add="props">
-              <q-td>
-                <q-btn color="primary" @click="updateCart(cart.findIndex(item=&gt;item._id === props.row._id), 1)">+</q-btn>
+              <q-td class="slot">
+                <q-btn @click="updateCart(cart.findIndex(item=&gt;item._id === props.row._id), 1)">+</q-btn>
               </q-td>
           </template>
           <template v-slot:body-cell-delete="props">
-              <q-td>
+              <q-td class="slot">
                 <q-btn color="red" @click="updateCart(cart.findIndex(item=&gt;item._id === props.row._id), parseInt(props.row.quantity*-1))">刪除</q-btn>
               </q-td>
           </template>
         </q-table>
       </div>
-    <!-- 老師範例 -->
-    <!-- <div class="col-12">
-      <table>
-        <thead>
-          <tr>
-            <th>圖片</th>
-            <th>名稱</th>
-            <th>單價</th>
-            <th>數量</th>
-            <th>小計</th>
-            <th>操作</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(product, idx) in cart" :key="product._id" :class="{'bg-red': !product.p_id.sell}">
-            <td>
-              <img :aspect-ratio="1" :width="200" :src="product.p_id.image">
-            </td>
-            <td>{{ product.p_id.name }}</td>
-            <td>{{ product.p_id.price }}</td>
-            <td>
-              <q-btn color="primary" @click="updateCart(idx, -1)">-</q-btn>&nbsp;{{ product.quantity }}&nbsp;
-              <q-btn color="primary" @click="updateCart(idx, 1)">+</q-btn>
-            </td>
-            <td>{{ product.quantity * product.p_id.price }}</td>
-            <td>
-              <q-btn color="red" @click="updateCart(idx, product.quantity*-1)">刪除</q-btn>
-            </td>
-          </tr>
-          <tr v-if="cart.length === 0">
-            <td class="text-center" colspan="6">沒有商品</td>
-          </tr>
-        </tbody>
-      </table>
-    </div> -->
     <div class="col-12 text-center">
-
       <!-- <q-btn color="green" :disabled="!canCheckout" @click="onCheckoutBtnClick">
         結帳
         <td class="text-center" colspan="6">沒有商品</td>

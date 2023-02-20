@@ -9,6 +9,10 @@
   width: 50vw;
   background-color: var(--secondary);
 }
+.left{
+  height: 100vh;
+  overflow: hidden;
+}
 .form{
   margin: auto;
   padding: 3rem;

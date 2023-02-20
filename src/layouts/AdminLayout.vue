@@ -5,6 +5,9 @@
   color: white;
   font-size: 3rem;
 }
+.bg-primary{
+  background-color: black;
+}
 </style>
 
 <template>
@@ -12,8 +15,8 @@
 
     <q-header class="bg-primary text-secondary h1" height-hint="98">
       <q-toolbar>
-            <img src="src/img/home/LOGO-01.png" style="width: 100px;">
-          <span class="logo-text">Dostoevsky Library</span>
+        <img src="./../assets/img/home/logo-01.png" style="width: 80px;">
+          <span class="logo-text">Management Center</span>
       </q-toolbar>
 
       <q-tabs align="right">
@@ -29,6 +32,9 @@
     </q-page-container>
 
   </q-layout>
+  <footer>
+      <div class="footer"><p>© 2023 Dostoevsky Library. All rights reserved.</p></div>
+    </footer>
 </template>
 
 <script setup>

@@ -3,7 +3,7 @@
 
 <template>
 <div class="col-12 ">
-            <h3 class="title">Items</h3>
+            <h3 class="title">Products</h3>
         </div>
 <div class="row"  style="margin: 20px 150px;">
   <div class="col-12 col-lg-3 col-md-4 col-sm-6" v-for="product in products" :key="product._id">

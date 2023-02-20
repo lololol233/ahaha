@@ -6,21 +6,31 @@
   margin: auto;
   margin-bottom: 20px;
 }
+.dislog-card{
+  width: 800px;
+}
+.q-input,
+.q-select{
+  padding: 10px;
+}
+.slot{
+  text-align: center;
+}
 </style>
 
 <template>
   <div id="admin-news">
-    <h2 class="title">Article Management</h2>
+    <h3 class="title">Article Management</h3>
     <div class="row">
-    <div class="col-12">
+    <div class="col-10">
             <q-btn color="primary" @click="openDialog(-1)">Add Article</q-btn>
         </div>
           <!-- 雅嵐範例 -->
           <div class="col-10">
         <q-table :rows="news" :columns="columns" row-key="_id">
     <template v-slot:body-cell-image="props">
-        <q-td>
-          <img :src="props.row.image" style="height: 100px; width: 100px" />
+        <q-td class="slot">
+          <img :src="props.row.image" style="height: 100px; width: 170px" />
         </q-td>
     </template>
     <!-- <template v-slot:body-cell-date="props">
@@ -28,7 +38,7 @@
         </q-td>
     </template> -->
     <template v-slot:body-cell-edit="props">
-        <q-td>
+        <q-td class="slot">
             <!-- <q-btn round="round" @click="openAdd(filterData.findIndex(item =&gt; item._id === props.row._id ))" icon="fa-solid fa-pen-to-square">
               <q-icon name="build"></q-icon>
             </q-btn> -->
@@ -42,11 +52,13 @@
       </div>
   </div>
 </div>
-  <q-dialog v-model="form.dialog" persistent>
-    <q-card>
+  <q-dialog v-model="form.dialog" persistent :maximized="maximizedToggle"
+      transition-show="slide-up"
+      transition-hide="slide-down">
+    <q-card class="dialog-card">
             <q-form @submit="submit">
               <q-card-title>
-                  <h3 class="text-center">{{ form._id.length > 0 ? '編輯文章' : '新增文章' }}</h3>
+                  <h4 class="text-center title">{{ form._id.length > 0 ? 'Edit Article' : 'Post Article' }}</h4>
               </q-card-title>
               <q-card-text>
                   <div class="row">
@@ -150,7 +162,7 @@
                       </div>
                       </div>
                       <div class="col-12">
-                          <q-select v-model="form.category" :options="categories" :rules="[rules.required]" label="分類"></q-select>
+                          <q-select v-model="form.category" :options="categories" :rules="[rules.required]" label="Category"></q-select>
                       </div>
                       <div class="col-12">
                         <q-file v-model="form.image" label="Pick Images" filled append accept=".jpg, image/*" @rejected="onRejected">
@@ -169,7 +181,7 @@
                   </div>
               </q-card-text>
               <q-card-actions>
-                  <q-btn :disabled="form.loading" color="primary" v-close-popup>Cancel</q-btn>
+                  <q-btn :disabled="form.loading" v-close-popup>Cancel</q-btn>
                   <q-btn :disabled="form.loading" color="primary" type="submit">Submit</q-btn>
               </q-card-actions>
             </q-form>
@@ -179,15 +191,21 @@
 
 <script setup>
 import { apiAuth } from '@/boot/axios'
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 import Swal from 'sweetalert2'
 import { useQuasar } from 'quasar'
-
+const maximizedToggle = ref(true)
 const columns = [
   {
     name: 'name',
     label: 'Article Title',
     field: news => news.name,
+    align: 'center'
+  },
+  {
+    name: 'category',
+    label: 'Category',
+    field: news => news.category,
     align: 'center'
   },
   {
@@ -232,7 +250,7 @@ const $q = useQuasar()
 //   })
 // }
 
-const categories = ['最新消息', '精采文章', '其他']
+const categories = ['News', 'Featured Articles', 'Oters']
 const rules = {
   required (value) {
     return !!value || '欄位必填'

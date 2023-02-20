@@ -7,11 +7,6 @@ body{
 }
 .logo-text{
   margin: 1rem 0;
-  /* font-family: 'Teko'; */
-  /* font-family: 'Shantell Sans', cursive; */
-  /* font-family: 'Josefin Sans', sans-serif; */
-  /* font-family: 'Arimo', sans-serif; */
-/* font-family: 'Josefin Sans', sans-serif; */
 font-family: 'Dancing Script', cursive;
   color: white;
   font-size: 2.5rem;
@@ -20,20 +15,21 @@ font-family: 'Dancing Script', cursive;
   background-color: black !important;
   display: flex;
 }
+.footer{
+  background-color: black;
+  color: white;
+  width: 100vw;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 </style>
 
 <template>
   <q-layout class="layout" view="hHh lpR fFf">
 
     <q-header class="bg-primary text-secondary h1" height-hint="98">
-      <!-- <q-toolbar>
-        <q-toolbar-title >
-          <q-avatar>
-            <img src="../../img/home/LOGO-01.png">
-          </q-avatar>
-          Dostoevsky Library
-        </q-toolbar-title>
-      </q-toolbar> -->
       <q-toolbar>
             <img src="./../assets/img/home/logo-01.png" style="width: 80px;">
           <span class="logo-text">Dostoevsky Library</span>
@@ -59,6 +55,9 @@ font-family: 'Dancing Script', cursive;
       <router-view />
     </q-page-container>
   </q-layout>
+  <footer>
+      <div class="footer"><p>© 2023 Dostoevsky Library. All rights reserved.</p></div>
+    </footer>
 </template>
 
 <script setup>

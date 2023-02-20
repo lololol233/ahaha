@@ -1,18 +1,4 @@
 <style scoped>
-/* table{
-  width: 80rem;
-  background-color: white;
-  margin: auto;
-  border-radius: 10px;
-  outline-style: none;
-  border: 1px solid gray;
-  border-spacing: 0;
-} */
-/* td{
-  border: 1px solid gray;
-  border-spacing: 0;
-
-} */
 .col-10{
   margin: auto;
 }
@@ -28,24 +14,10 @@
         <!-- Quasar範例 -->
         <div class="col-10">
         <q-table :rows="orders" :columns="columns">
-          <!-- <template v-slot:body-cell-image="props">
-            <q-td>
-              <img :src="props.row.p_id.image" style="height: 100px; width: 100px" />
-            </q-td>
-          </template> -->
-          <!-- <template v-slot:body-cell-image="props">
-            <q-td>
-              <ul>
-                <li v-for="product in props.row.products" :key="product._id">
-                    <img :src="product.p_id.image" style="height: 100px; width: 100px" />
-                </li>
-              </ul>
-        </q-td>
-    </template> -->
           <template v-slot:body-cell-name="props">
-            <q-td>
+            <q-td style="text-align: center; ">
               <ul>
-                <li v-for="product in props.row.products" :key="product._id">
+                <li v-for="product in props.row.products" :key="product._id" style="list-style: none;">
                     <p>{{product.quantity + ' 個 ' + product.p_id.name}}
                     </p>
                 </li>
@@ -54,31 +26,6 @@
     </template>
         </q-table>
       </div>
-        <!-- 老師範例 -->
-        <!-- <div class="col-12">
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>日期</th>
-                        <th>金額</th>
-                        <th>商品</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="order in orders" :key="order._id">
-                        <td>{{ order._id }}</td>
-                        <td>{{ new Date(order.date).toLocaleDateString() }}</td>
-                        <td>{{ order.totalPrice }}</td>
-                        <td>
-                            <ul>
-                                <li v-for="product in order.products" :key="product._id">{{ product.quantity + ' 個 ' + product.p_id.name }}</li>
-                            </ul>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div> -->
     </div>
 </div>
 </template>
@@ -90,12 +37,6 @@ import Swal from 'sweetalert2'
 
 // 範例
 const columns = [
-  // {
-  //   name: 'id',
-  //   label: '图片',
-  //   field: orders => orders,
-  //   align: 'center'
-  // },
   {
     name: 'date',
     label: 'Date',

@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
 </style>
 <style lang="scss" scoped>
+
 // 返回頂部
 #myBtn {
   width: 4rem;
@@ -24,7 +25,7 @@
 #myBtn:hover {
   background-color: #cea861;
 }
-// timeline example
+// 年表
 .section05 {
     background-color: #202221;
     min-height: 62rem;
@@ -104,8 +105,9 @@
   .entries .entry:nth-child(2n) .title.big:before {
     transform: translate(-8px, -50%);
   }
-// timeline example end
+// 首頁大圖
 #section01 {
+  width: 100vw;
   height: 50vh;
   font-size: 3rem;
   color: white;
@@ -116,6 +118,8 @@
   justify-content: center;
   align-items: center;
 }
+
+// 評論
 .slide-img{
   border-radius: 50%;
 }
@@ -144,12 +148,12 @@ margin: auto;
   }
 }
 .section01 p{
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 2rem;
 }
 .left{
-  padding: 5rem;
-  font-size: 1rem;
+  padding-left: 5rem;
+  padding-top: 3rem;
 }
 .text-h3{
   text-align: center;
@@ -162,13 +166,7 @@ margin: auto;
 .comment{
   width: 40rem;
 }
-footer{
-  height: 5rem;
-  background-color: black;
-  color: white;
-  font-size: 1rem;
-  text-align: center;
-}
+
 #section {
       height: 90vh;
       font-size: 3rem;
@@ -180,6 +178,11 @@ footer{
       justify-content: end;
       background-image: url(../../assets/img/home/dosto5.png);
     }
+
+    // 書本
+.my-card img{
+  width: 16.5rem;
+}
 .my-card img:hover{
   cursor: pointer;
   filter: brightness(50%);
@@ -208,12 +211,16 @@ footer{
 }
 // footer
 .footer{
+  background-color: black;
+  color: white;
   width: 100vw;
   height: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+// 頁首大圖打字效果
 .typing {
     color: white;
     font-size: 3.5rem;
@@ -241,7 +248,7 @@ footer{
   justify-content: center;
 }
 
-/* 光标 */
+// 光標
 @keyframes blink-caret {
 
     from,
@@ -267,7 +274,7 @@ footer{
     <div class="row section01">
 
       <div class="col-lg-6 col-md-12 left">
-        <p>Fyodor Mikhailovich Dostoevsky(Russian: Фёдор Михайлович Достоевский; 11 November 1821 – 9 February 1881), sometimes transliterated as Dostoyevsky, was a Russian novelist, short story writer, essayist and journalist. Dostoevsky's literary works explore the human condition in the troubled political, social, and spiritual atmospheres of 19th-century Russia, and engage with a variety of philosophical and religious themes. His most acclaimed novels include Crime and Punishment (1866), The Idiot (1869), Demons (1872), and The Brothers Karamazov (1880). His 1864 novella, Notes from Underground, is considered to be one of the first works of existentialist literature. Numerous literary critics regard him as one of the greatest novelists in all of world literature, as many of his works are considered highly influential masterpieces!</p>
+        <p>Fyodor Mikhailovich Dostoevsky(Russian: Фёдор Михайлович Достоевский; 11 November 1821 – 9 February 1881), sometimes transliterated as Dostoyevsky, was a Russian novelist, short story writer, essayist and journalist. Dostoevsky's literary works explore the human condition in the troubled political, social, and spiritual atmospheres of 19th-century Russia, and engage with a variety of philosophical and religious themes. His most acclaimed novels include Crime and Punishment (1866), The Idiot (1869), Demons (1872), and The Brothers Karamazov (1880).</p>
         <p>
           Dostoevsky's body of work consists of thirteen novels, three novellas, seventeen short stories, and numerous other works. His writings were widely read both within and beyond his native Russia and influenced an equally great number of later writers including Russians such as Aleksandr Solzhenitsyn and Anton Chekhov, philosophers Friedrich Nietzsche and Jean-Paul Sartre, and the emergence of Existentialism and Freudianism. His books have been translated into more than 170 languages, and served as the inspiration for many films.
         </p>
@@ -348,6 +355,9 @@ footer{
         transition-next="jump-left"
         swipeable
         animated
+        :autoplay="autoplay"
+        infinite
+        @mouseleave="autoplay=true"
         control-color="black"
         navigation
         padding
@@ -379,72 +389,74 @@ footer{
       </q-carousel>
     </div>
   </div>
-
-  <section class="row section04 bg-dark text-white">
-      <div class="col-12"><h3 class="text-h3">Works</h3></div>
+<!-- 書籍圖片 -->
+  <section class="section04 bg-dark text-white">
+      <div class="col-12">
+        <h3 class="text-h3">Works</h3>
+      </div>
         <div class="q-pa-lg row items-start q-gutter-md section04-card">
-    <q-card class="my-card">
-      <img src="../../assets/img/book/book2.png">
-      <div class="label">
-        <p>1866</p>
-        <p>Crime and Punishent</p>
+          <q-card class="my-card">
+            <img src="../../assets/img/book/book2.png">
+            <div class="label">
+              <p>1866</p>
+              <p>Crime and Punishent</p>
+            </div>
+          </q-card>
+          <q-card class="my-card">
+            <img src="../../assets/img/book/book4.png">
+            <div class="label">
+              <p>1856</p>
+              <p>White Nights</p>
+            </div>
+          </q-card>
+          <q-card class="my-card">
+            <img src="../../assets/img/book/book6.png">
+            <div class="label">
+              <p>1856</p>
+              <p>White Nights</p>
+            </div>
+          </q-card>
+          <q-card class="my-card">
+            <img src="../../assets/img/book/book8.png">
+            <div class="label">
+              <p>1869</p>
+              <p>The Idiot</p>
+            </div>
+          </q-card>
+          <q-card class="my-card">
+            <img src="../../assets/img/book/book9.png">
+            <div class="label">
+              <p>1872</p>
+              <p>Devils</p>
+            </div>
+          </q-card>
+          <q-card class="my-card">
+            <img src="../../assets/img/book/book3.png">
+            <div class="label">
+              <p>1879</p>
+              <p>Raw Youth</p>
+            </div>
+          </q-card>
+          <q-card class="my-card">
+            <img src="../../assets/img/book/book5.png">
+            <div class="label">
+              <p>1879</p>
+              <p>Raw Youth</p>
+            </div>
+          </q-card>
+          <q-card class="my-card">
+            <img src="../../assets/img/book/book7.png">
+            <div class="label">
+              <p>1880</p>
+              <p>Brothers Karamazov</p>
+            </div>
+          </q-card>
       </div>
-    </q-card>
-    <q-card class="my-card">
-      <img src="../../assets/img/book/book4.png">
-      <div class="label">
-        <p>1856</p>
-        <p>White Nights</p>
-      </div>
-    </q-card>
-    <q-card class="my-card">
-      <img src="../../assets/img/book/book6.png">
-      <div class="label">
-        <p>1856</p>
-        <p>White Nights</p>
-      </div>
-    </q-card>
-    <q-card class="my-card">
-      <img src="../../assets/img/book/book8.png">
-      <div class="label">
-        <p>1869</p>
-        <p>The Idiot</p>
-      </div>
-    </q-card>
-    <q-card class="my-card">
-      <img src="../../assets/img/book/book9.png">
-      <div class="label">
-        <p>1872</p>
-        <p>Devils</p>
-      </div>
-    </q-card>
-    <q-card class="my-card">
-      <img src="../../assets/img/book/book3.png">
-      <div class="label">
-        <p>1879</p>
-        <p>Raw Youth</p>
-      </div>
-    </q-card>
-    <q-card class="my-card">
-      <img src="../../assets/img/book/book5.png">
-      <div class="label">
-        <p>1879</p>
-        <p>Raw Youth</p>
-      </div>
-    </q-card>
-    <q-card class="my-card">
-      <img src="../../assets/img/book/book7.png">
-      <div class="label">
-        <p>1880</p>
-        <p>Brothers Karamazov</p>
-      </div>
-    </q-card>
-</div>
     </section>
-
-    <footer>
+<!-- footer頁尾資訊 -->
+    <!-- <footer>
       <div class="footer"><p>© 2023 Dostoevsky Library. All rights reserved.</p></div>
-    </footer>
+    </footer> -->
 </template>
 
 <script setup>

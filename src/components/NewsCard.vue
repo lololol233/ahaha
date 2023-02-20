@@ -3,19 +3,24 @@
   padding: 3rem;
   width: 50vw;
 }
+.news-title{
+  font-family: 'Teko';
+  font-size: 3rem;
+  color:black;
+}
 </style>
 
 <template>
   <div class="q-pa-lg row">
   <q-card class="card-news">
     <div class="text-h4">
-        <router-link class="text-primary" :to="'/news/' + _id">{{ name }}</router-link>
+        <router-link class="news-title" :to="'/news/' + _id">{{ name }}</router-link>
   </div>
   <div class="text-h6">
     {{ new Date(date).toLocaleDateString() }}
   </div>
   <div class="text-h6">
-    文章分類:{{ category }}
+    Category:{{ category }}
   </div>
     <img :src="image">
     <!-- <div class="text-h6">
