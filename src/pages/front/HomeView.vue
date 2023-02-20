@@ -272,7 +272,7 @@ footer{
         </p>
       </div>
       <div class="col-lg-6 col-md-12 right order-first">
-        <q-img src="../../assets/img/home/dosto4.png" alt="" style="width: 600px;"></q-img>
+        <q-img src="../../assets/img/home/Dosto4.png" alt="" style="width: 600px;"></q-img>
       </div>
     </div>
     <!-- Timeline example -->
