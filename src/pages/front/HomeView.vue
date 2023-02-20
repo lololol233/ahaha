@@ -487,7 +487,7 @@ window.onscroll = function() {scrollFunction()};
 }
 
 $('#section').css({
-    backgroundImage: 'url(../../assets/img/home/dosto5.png)',
+    backgroundImage: `url(../../assets/img/home/dosto5.png)`,
   })
 
 gsap.to('#section',{
