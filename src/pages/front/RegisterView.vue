@@ -1,6 +1,60 @@
+<style scoped>
+.all{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+.right,
+.left{
+  width: 50vw;
+  background-color: var(--secondary);
+}
+.form{
+  margin: auto;
+  padding: 3rem;
+  max-width: 35vw;
+}
+p{
+  text-align: center;
+  font-family: 'Roboto';
+  font-size: 1.2rem;
+  color: gray;
+}
+.q-btn{
+  width: 30vw;
+  height: 3rem;
+  margin-bottom: 2rem;
+  font-size: large;
+  background-color: white;
+}
+@media screen and (max-width: 908px){
+  .left{
+    display:none;
+  }
+  .right{
+    width: 100vw;
+  }
+  .q-btn,
+  .form,
+  .q-input{
+    width: 70vw;
+    display: flex;
+  }
+}
+
+</style>
 <template>
-  <h3 class="title">Create Account</h3>
-  <div class="q-pa-md" style="max-width: 800px">
+  <div class="all">
+    <div class="left">
+      <q-img src="../../assets/img/home/dosto.jpg"
+          :ratio="1/1">
+          <div class="absolute-bottom text-subtitle1 text-center">
+            Photo of Dostoevsky
+          </div></q-img>
+    </div>
+  <div class="right" style="max-width: 800px">
+    <h3 class="title">Create Account</h3>
+    <div class="form">
     <q-form
       @reset="onReset"
       class="q-gutter-md"
@@ -49,6 +103,8 @@
       </div>
     </q-form>
   </div>
+</div>
+</div>
 </template>
 
 <script setup>
