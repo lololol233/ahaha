@@ -58,7 +58,7 @@ body {
   >
     <swiper-slide
       ><router-link class="text-primary" to="/karamazov"><img
-        src="../../assets/img/book/book1 300x450.png" /></router-link></swiper-slide
+        src="../../assets/img/book/book1.png" /></router-link></swiper-slide
     ><swiper-slide
       ><img
         src="../../assets/img/book/book5.png" /></swiper-slide
