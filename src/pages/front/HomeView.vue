@@ -272,7 +272,7 @@ footer{
         </p>
       </div>
       <div class="col-lg-6 col-md-12 right order-first">
-        <q-img src="src/assets/img/home/dosto4.png" alt="" style="width: 600px;"></q-img>
+        <q-img src="../../assets/img/home/dosto4.png" alt="" style="width: 600px;"></q-img>
       </div>
     </div>
     <!-- Timeline example -->
@@ -355,14 +355,14 @@ footer{
         class="shadow-1 rounded-borders carousel"
       >
         <q-carousel-slide name="style" class="column no-wrap flex-center slide">
-          <img class="slide-img" src="src/assets/img/home/comment1.png" alt="">
+          <img class="slide-img" src="../../assets/img/home/comment1.png" alt="">
           <div class="q-mt-md text-center">
             <p class="comment">“Whoever you are, you are the vessel of this perplexed liquid, this cloudy, yeasty, precious stuff, the soul. The soul is not restrained by barriers. It overflows, it floods, it mingles with the souls of others.”</p>
           </div>
           <div class="text-h6">Virginia Woolf</div>
         </q-carousel-slide>
         <q-carousel-slide name="tv" class="column no-wrap flex-center">
-          <img class="slide-img" src="src/assets/img/home/comment2.png" alt="">
+          <img class="slide-img" src="../../assets/img/home/comment2.png" alt="">
           <div class="q-mt-md text-center">
             <p class="comment">“Whoever you are, you are the vessel of this perplexed liquid, this cloudy, yeasty, precious stuff, the soul. The soul is not restrained by barriers. It overflows, it floods, it mingles with the souls of others.”</p>
             <div class="text-h6">Hermann Karl Hesse</div>
