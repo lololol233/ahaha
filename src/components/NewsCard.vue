@@ -1,12 +1,23 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+</style>
 <style scopped>
 .card-news{
   padding: 3rem;
-  width: 50vw;
+  width: 52vw;
 }
 .news-title{
   font-family: 'Teko';
   font-size: 3rem;
   color:black;
+}
+.cards-img{
+  overflow: hidden;
+}
+.cards-img img:hover{
+  filter: brightness(80%);
+  transition: all 0.5s ease-out;
+  transform: scale(1.1);
 }
 </style>
 
@@ -22,7 +33,12 @@
   <div class="text-h6">
     Category:{{ category }}
   </div>
-    <img :src="image">
+  <router-link :to="'/news/' + _id">
+    <div class="cards-img">
+      <img :src="image">
+    </div>
+  </router-link>
+
     <!-- <div class="text-h6">
         <p class="pre">{{ description }}</p>
         <div v-html="description"></div>

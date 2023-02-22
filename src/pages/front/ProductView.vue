@@ -1,3 +1,6 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+</style>
 <style scopped>
 #product{
   width: 70%;
@@ -46,7 +49,7 @@
     </div>
       <div class="align-center justify-center text-center" persistent="persistent" :model-value="!product.sell" >
           <!-- <h1 class="text-red">已下架</h1> -->
-          <q-btn @click="router.go(-1)">Go Back</q-btn>
+          <q-btn @click="router.go(-1)" style="margin-bottom: 3rem;">Go Back</q-btn>
       </div>
   </div>
 </template>

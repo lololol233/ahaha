@@ -3,11 +3,15 @@
   width: 1000px;
   margin: auto;
 }
-.col-6{
+.col-6,
+.col-8{
   margin: auto;
 }
 .none{
   display: none;
+}
+.word{
+  margin: 3rem 0;
 }
 </style>
 
@@ -37,7 +41,7 @@
     </div>
       <div class="align-center justify-center text-center" persistent="persistent" :model-value="!New.sell" >
           <!-- <h1 class="text-red">已下架</h1> -->
-          <q-btn @click="router.go(-1)">Go Back</q-btn>
+          <q-btn @click="router.go(-1)" style="margin-bottom: 3rem;">Go Back</q-btn>
       </div>
   </div>
 </template>

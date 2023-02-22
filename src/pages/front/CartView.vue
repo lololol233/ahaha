@@ -13,7 +13,7 @@
     <div class="col-12">
       <h3 class="title">Cart</h3>
     </div>
-              <!-- 雅嵐範例 -->
+      <!-- 雅嵐範例 -->
       <div class="col-10">
         <q-table :rows="cart" :columns="columns" row-key="_id" >
           <template v-slot:body-cell-image="props">
@@ -33,7 +33,7 @@
           </template>
           <template v-slot:body-cell-delete="props">
               <q-td class="slot">
-                <q-btn color="red" @click="updateCart(cart.findIndex(item=&gt;item._id === props.row._id), parseInt(props.row.quantity*-1))">刪除</q-btn>
+                <q-btn color="red" @click="updateCart(cart.findIndex(item=&gt;item._id === props.row._id), parseInt(props.row.quantity*-1))">Delete</q-btn>
               </q-td>
           </template>
         </q-table>
@@ -43,7 +43,7 @@
         結帳
         <td class="text-center" colspan="6">沒有商品</td>
       </q-btn> -->
-      <div class="col-12 text-center">
+      <div class="col-12 text-center" style="margin: 2rem 0">
         <p>Total Price {{ totalPrice }}</p>
         <q-btn color="accent" :disabled="!canCheckout" @click="onCheckoutBtnClick">Checkout</q-btn>
       </div>
