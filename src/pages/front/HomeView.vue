@@ -463,7 +463,7 @@
 </template>
 
 <script setup>
-  /* eslint-disable */
+/* eslint-disable */
   import { onMounted, onUnmounted } from 'vue'
   import $ from 'jquery'
   import gsap from 'gsap'
