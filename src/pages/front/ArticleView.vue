@@ -13,6 +13,19 @@
 .word{
   margin: 3rem 0;
 }
+@media screen and (max-width: 548px){
+  #New{
+    width: 90vw;
+  }
+  .col-8 img{
+    width: 90vw;
+  }
+  .word{
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 0.5rem !important;
+  }
+}
 </style>
 
 <template>
@@ -97,7 +110,7 @@ const submitCart = () => {
     New.category = data.result.category
     New.date = data.result.date
 
-    document.title = '購物網 | ' + New.name
+    document.title = 'Dostoevsky | ' + New.name
     // document.querySelector('meta[property="og:title"]').setAttribute('content', New.name)
   } catch (error) {
     Swal.fire({

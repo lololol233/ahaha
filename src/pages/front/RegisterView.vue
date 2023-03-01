@@ -43,6 +43,7 @@ p{
   .q-input{
     width: 70vw;
     display: flex;
+    margin: 1rem;
   }
 }
 

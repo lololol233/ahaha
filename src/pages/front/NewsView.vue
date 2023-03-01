@@ -2,6 +2,7 @@
 .card{
   margin: auto;
 }
+
 </style>
 
 <template>

@@ -19,6 +19,16 @@
   transition: all 0.5s ease-out;
   transform: scale(1.1);
 }
+
+@media screen and (max-width: 908px){
+  .card-news{
+  padding: 3rem;
+  width: 90vw;
+}
+.cards-img img{
+  width: 80vw;
+}
+}
 </style>
 
 <template>

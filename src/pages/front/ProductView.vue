@@ -106,7 +106,7 @@ const submitCart = () => {
     product.sell = data.result.sell
     product.category = data.result.category
 
-    document.title = '購物網 | ' + product.name
+    document.title = 'Dostoevsky | ' + product.name
     // document.querySelector('meta[property="og:title"]').setAttribute('content', product.name)
   } catch (error) {
     Swal.fire({

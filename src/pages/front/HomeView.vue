@@ -131,7 +131,7 @@
     width: 70vw;
     margin: auto;
   }
-  @media (max-width: 560px) {
+  @media (max-width: 660px) {
     .section01 {
       width: 100vw;
       margin: auto;
@@ -145,7 +145,19 @@
     .section05:before {
       height: 1500px;
     }
-  }
+    #section{
+      height: 300px !important;
+    }
+    .right .q-img{
+      width: 400px !important;
+      margin: 2rem !important;
+    }
+    .left{
+      margin: 2rem !important;
+      padding: 0 !important;
+    }
+}
+
   .section01 p {
     font-size: 1.1rem;
     line-height: 2rem;
@@ -463,7 +475,7 @@
 </template>
 
 <script setup>
-/* eslint-disable */
+  /* eslint-disable */
   import { onMounted, onUnmounted } from 'vue'
   import $ from 'jquery'
   import gsap from 'gsap'
