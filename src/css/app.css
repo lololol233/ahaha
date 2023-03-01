@@ -1,12 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Teko&display=swap");
 :root {
   --primary: #7b9a93;
   --secondary:#f4ece1;
 }
 
 .title {
-  font-family: "Roboto", sans-serif;
+  font-family: "Teko", sans-serif;
   font-weight: bolder;
-  color: #7b9a93;
+  color: black;
   text-align: center;
 }
 
