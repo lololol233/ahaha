@@ -8,6 +8,11 @@
 .bg-primary{
   background-color: black;
 }
+@media (max-width: 660px) {
+    .logo-text{
+      display: none;
+    }
+  }
 </style>
 
 <template>

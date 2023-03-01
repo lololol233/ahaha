@@ -24,6 +24,14 @@ font-family: 'Dancing Script', cursive;
   align-items: center;
   justify-content: center;
 }
+
+  @media (max-width: 660px) {
+    .logo-text{
+      margin: 1rem 0;
+      font-size: 1.5rem;
+      display: none;
+    }
+  }
 </style>
 
 <template>
